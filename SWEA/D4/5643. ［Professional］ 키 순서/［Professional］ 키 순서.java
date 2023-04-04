@@ -60,8 +60,7 @@ public class Solution {
 				if (small + big == N-1) res++;
 			}
 			
-		System.out.printf("#%d %d", t, res);
-		System.out.println();
+		System.out.println("#"+t+ " "+res);	
 		}
 
 	}
