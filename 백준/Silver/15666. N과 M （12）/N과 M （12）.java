@@ -6,9 +6,11 @@ import java.util.*;
 public class Main {
     static int[] arr, res;
     static Integer[] arr2;
+    static StringBuilder sb;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+        sb = new StringBuilder();
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
         st = new StringTokenizer(br.readLine());
@@ -24,21 +26,16 @@ public class Main {
         arr2 = tSet.toArray(new Integer[0]); // 트리셋을 배열로 변환(크기 0 으로 주면 알아서 트리셋배열만큼 배열 만듬
         int size = arr2.length;
         res = new int[m]; //정답 배열
-        boolean[] check = new boolean[arr2.length];
-//        System.out.println(Arrays.toString(arr2));
-//        System.out.println(size+"의 개수중 "+ m+"개만큼 뽑는다");
         bfs(size,m,0, 0); //중복순열? size의 개수중에 m개를 뽑을꺼야
+        System.out.println(sb.toString());
     }
 
     private static void bfs(int size,int m, int cnt, int start) {
-        for (int i = 1; i < cnt; i++) {
-
-        }
         if (cnt == m) {
             for (int i = 0; i < m; i++) {
-                System.out.print(res[i]+" ");
+                sb.append(res[i] + " ");
             }
-            System.out.println();
+            sb.append("\n");
             return;
         }
 
