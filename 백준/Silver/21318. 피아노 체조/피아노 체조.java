@@ -23,12 +23,14 @@ public class Main {
             }
         }
         Q = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < Q; i++) {
             st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
-            System.out.println(sum[y] - sum[x]);
+            sb.append(sum[y] - sum[x]).append("\n");
         }
+            System.out.println(sb);
     }
 
 }
