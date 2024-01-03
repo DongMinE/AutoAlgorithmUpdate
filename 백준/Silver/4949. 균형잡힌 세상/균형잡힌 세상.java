@@ -5,16 +5,17 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
+        StringBuilder sb = new StringBuilder();
         String str = br.readLine();
 
         while (true) {
-            System.out.println(sol(str));
+            sb.append(sol(str)).append("\n");
             str = br.readLine();
             if (str.equals(".")) {
                 break;
             }
         }
+        System.out.println(sb);
     }
 
     private static String sol(String str) {
