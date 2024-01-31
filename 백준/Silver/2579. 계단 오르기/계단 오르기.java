@@ -1,23 +1,30 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
 
-        int[] stair = new int[301];
-        int[] score = new int[301];
-        for (int i = 1; i <= N; i++)
-            stair[i] = sc.nextInt();
+    static int[] maxList, list;
+    static int n;
 
-        score[1] = stair[1];
-        score[2] = stair[1] + stair[2];
-        score[3] = Math.max(stair[1], stair[2]) + stair[3];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        n = Integer.parseInt(br.readLine());
+        maxList = new int[301];
+        list = new int[301];
 
-        for (int n = 4; n <= N; n++) {
-            score[n] = Math.max(score[n - 3] + stair[n - 1], score[n - 2]) + stair[n];
+        for (int i = 1; i <= n; i++) {
+            int input = Integer.parseInt(br.readLine());
+            list[i] = input;
         }
+        maxList[1] = list[1];
+        maxList[2] = list[2] + list[1];
+        maxList[3] = Math.max(list[1], list[2]) + list[3];
 
-        System.out.println(score[N]);
+        for (int i = 4; i <= n; i++) {
+            maxList[i] = Math.max(maxList[i - 2], maxList[i - 3] + list[i - 1]) + list[i];
+        }
+        System.out.println(maxList[n]);
     }
 }
