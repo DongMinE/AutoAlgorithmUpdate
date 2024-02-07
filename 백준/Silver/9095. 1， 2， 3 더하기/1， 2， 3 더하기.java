@@ -12,12 +12,11 @@ public class Main {
         dp[1] = 1;
         dp[2] = 2;
         dp[3] = 4;
-        for (int i = 4; i < 12; i++) {
-            dp[i] = dp[i-1]+dp[i-2]+dp[i-3];
-        }
         for (int i = 0; i < n; i++) {
+            for (int j = 4; j < 12; j++) {
+                dp[j] = dp[j - 1] + dp[j - 2] + dp[j - 3];
+            }
             System.out.println(dp[Integer.parseInt(br.readLine())]);
-            
         }
     }
 }
