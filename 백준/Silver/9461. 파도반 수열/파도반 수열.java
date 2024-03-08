@@ -13,17 +13,15 @@ public class Main {
             long[] list = new long[101];
             list[0] = 0;
             list[1] = list[2] = list[3] = 1;
-
             list[4] = list[5] = 2;
             for (int i = 6; i < 101; i++) {
                 list[i] = list[i - 1] + list[i - 5];
             }
 
-//
 //            for (int i = 4; i <= n; i++) {
 //                list[i] = list[i - 2] + list[i - 3];
 //            }
-//
+
             System.out.println(list[n]);
         }
 
