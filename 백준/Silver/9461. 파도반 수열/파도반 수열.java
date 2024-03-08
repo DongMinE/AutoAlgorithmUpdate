@@ -7,6 +7,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int T = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
 
         while (T-- > 0) {
             int n = Integer.parseInt(br.readLine());
@@ -17,13 +18,12 @@ public class Main {
             for (int i = 6; i < 101; i++) {
                 list[i] = list[i - 1] + list[i - 5];
             }
-
 //            for (int i = 4; i <= n; i++) {
 //                list[i] = list[i - 2] + list[i - 3];
 //            }
+            sb.append(list[n]).append("\n");
 
-            System.out.println(list[n]);
         }
-
+        System.out.println(sb);
     }
 }
