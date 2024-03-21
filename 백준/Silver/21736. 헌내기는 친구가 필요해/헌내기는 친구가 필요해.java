@@ -24,8 +24,6 @@ public class Main {
                 if (cha.charAt(j) == 'I') {
                     a = i;
                     b = j;
-                } else if (cha.charAt(j) == 'X') {
-                    check[i][j] = true;
                 }
             }
         }
